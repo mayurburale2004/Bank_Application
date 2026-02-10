@@ -26,7 +26,7 @@ public class BankApp {
                 String p = sc.nextLine();
 
                 service.register(u, p);
-                System.out.println("✅ User Registered Successfully\n");
+                System.out.println("User Registered Successfully\n");
             }
 
             // LOGIN
@@ -38,7 +38,7 @@ public class BankApp {
             String p = sc.nextLine();
 
             userId = service.login(u, p);
-            System.out.println("✅ Login Successful");
+            System.out.println(" Login Successful");
 
             int choice;
             do {
@@ -61,19 +61,19 @@ public class BankApp {
                         System.out.print("Enter amount: ");
                         double dep = Double.parseDouble(sc.nextLine());
                         service.deposit(userId, dep);
-                        System.out.println("✅ Amount Deposited");
+                        System.out.println(" Amount Deposited");
                         break;
 
                     case 2:
                         System.out.print("Enter amount: ");
                         double wit = Double.parseDouble(sc.nextLine());
                         service.withdraw(userId, wit);
-                        System.out.println("✅ Amount Withdrawn");
+                        System.out.println(" Amount Withdrawn");
                         break;
 
                     case 3:
                         double bal = service.checkBalance(userId);
-                        System.out.println("💰 Current Balance: " + bal);
+                        System.out.println(" Current Balance: " + bal);
                         break;
 
                     case 4:
@@ -84,14 +84,14 @@ public class BankApp {
                         System.out.print("Enter new username: ");
                         String newUser = sc.nextLine();
                         service.changeUsername(userId, newUser);
-                        System.out.println("✅ Username Updated");
+                        System.out.println(" Username Updated");
                         break;
 
                     case 6:
                         System.out.print("Enter new password: ");
                         String newPass = sc.nextLine();
                         service.changePassword(userId, newPass);
-                        System.out.println("✅ Password Updated");
+                        System.out.println(" Password Updated");
                         break;
 
                     case 7:
@@ -99,17 +99,17 @@ public class BankApp {
                         String confirm = sc.nextLine();
                         if (confirm.equalsIgnoreCase("yes")) {
                             service.deleteAccount(userId);
-                            System.out.println("❌ Account Deleted");
+                            System.out.println(" Account Deleted");
                             return;
                         }
                         break;
 
                     case 8:
-                        System.out.println("🙏 Thank you for using Bank App");
+                        System.out.println(" Thank you for using Bank App");
                         break;
 
                     default:
-                        System.out.println("❌ Invalid choice");
+                        System.out.println(" Invalid choice");
                 }
 
             } while (choice != 8);
